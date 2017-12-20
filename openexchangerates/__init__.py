@@ -104,11 +104,7 @@ class OpenExchangeRatesClient(object):
                                    date.strftime("%Y-%m-%d"),
                                    params={'base': base})
             resp.raise_for_status()
-        except requests.exceptions.
-        
-        
-        
-        , e:
+        except requests.exceptions.RequestException as e:
             raise OpenExchangeRatesClientException(e)
         return resp.json(parse_int=decimal.Decimal,
                          parse_float=decimal.Decimal)
